@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ED0D892D-7B28-4099-AB32-E51AB9E3CCF3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ControleObras</RootNamespace>
+    <AssemblyName>ControleObras</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.DataAccess, Version=1.102.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\oracle\product\10.2.0\db_1\ODP.NET\bin\1.x\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entidades\BDI.cs" />
+    <Compile Include="Entidades\Endereco.cs" />
+    <Compile Include="Entidades\EquipeObra.cs" />
+    <Compile Include="Entidades\Grupos.cs" />
+    <Compile Include="Entidades\Imobilizados.cs" />
+    <Compile Include="Entidades\MaterialObra.cs" />
+    <Compile Include="Entidades\Produto.cs" />
+    <Compile Include="Entidades\Obra.cs" />
+    <Compile Include="Entidades\Pessoa.cs" />
+    <Compile Include="Entidades\Terceirizado.cs" />
+    <Compile Include="Formularios\frmCadastroMemorialDescritivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCadastroMemorialDescritivo.Designer.cs">
+      <DependentUpon>frmCadastroMemorialDescritivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCadastrodeObras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCadastrodeObras.Designer.cs">
+      <DependentUpon>frmCadastrodeObras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCadastroPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCadastroPessoa.Designer.cs">
+      <DependentUpon>frmCadastroPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmListagemMemorialDescritivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListagemMemorialDescritivo.Designer.cs">
+      <DependentUpon>frmListagemMemorialDescritivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmListagemPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListagemPessoa.Designer.cs">
+      <DependentUpon>frmListagemPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Negocio\Cargo.cs" />
+    <Compile Include="Negocio\Class1.cs" />
+    <Compile Include="Negocio\GruposNegocio.cs" />
+    <Compile Include="Negocio\ProdutoNegocio.cs" />
+    <Compile Include="Negocio\ObraNegocio.cs" />
+    <Compile Include="Negocio\StatusObra.cs" />
+    <Compile Include="Negocio\StatusTela.cs" />
+    <Compile Include="Negocio\PessoaNegocio.cs" />
+    <Compile Include="Negocio\TipoCadastro.cs" />
+    <Compile Include="Negocio\Tipocs.cs" />
+    <Compile Include="Negocio\TipoPessoa.cs" />
+    <Compile Include="Negocio\TipoRemuneracao.cs" />
+    <Compile Include="Persistencia\BancodeDados.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frmCadastroMemorialDescritivo.resx">
+      <DependentUpon>frmCadastroMemorialDescritivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCadastrodeObras.resx">
+      <DependentUpon>frmCadastrodeObras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCadastroPessoa.resx">
+      <DependentUpon>frmCadastroPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmListagemMemorialDescritivo.resx">
+      <DependentUpon>frmListagemMemorialDescritivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmListagemPessoa.resx">
+      <DependentUpon>frmListagemPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\DataSources\ControleObras.Entidades.EquipeObra.datasource" />
+    <None Include="Properties\DataSources\ControleObras.Entidades.Grupos.datasource" />
+    <None Include="Properties\DataSources\ControleObras.Entidades.MaterialObra.datasource" />
+    <None Include="Properties\DataSources\ControleObras.Entidades.MemorialDescritivo.datasource">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\ControleObras.Entidades.Pessoa.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\casa.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\financeiro.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\memorial.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\pessoa.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\filtro.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\laranja.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\verde.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\vermelho.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Relatórios\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
